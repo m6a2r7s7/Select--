@@ -44,3 +44,6 @@ create table if not exists SongPlaylist(
 	Playlist_id INTEGER references Playlist(id),
 	constraint SP_pk primary key (Song_id, Playlist_id)
 );
+
+alter table Song
+add column if not exists Artist_id INTEGER not null references Artist(id);
